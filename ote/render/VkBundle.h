@@ -21,7 +21,7 @@ struct VkBundle {
     VkPhysicalDevice mVkPhysicalDevice;
     VkPhysicalDeviceMemoryProperties mVkPhysicalDeviceMemoryProperties;
 
-    VkBool32 AllocateMemoryTypeFromProperties(uint32_t i, VkMemoryPropertyFlagBits bits, uint32_t *pInt);
+    VkBool32 AllocateMemoryTypeFromProperties(uint32_t i, VkMemoryPropertyFlags bits, uint32_t *pInt);
 };
 
 

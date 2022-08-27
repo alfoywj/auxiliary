@@ -6,7 +6,7 @@
 #define DISTORTION_BROWN_MODEL_DBM_DEFINES_H
 
 #include <stdint.h>
-
+#include <vector>
 #ifdef __cplusplus
 extern "C" {
 #endif

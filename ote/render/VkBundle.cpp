@@ -8,7 +8,7 @@ VkBundle::VkBundle(VkDevice vkDevice, VkQueue vkQueue, uint32_t queueIndex,  VkP
     vkGetPhysicalDeviceMemoryProperties(mVkPhysicalDevice, &mVkPhysicalDeviceMemoryProperties);
 }
 
-VkBool32 VkBundle::AllocateMemoryTypeFromProperties(uint32_t typeBits, VkMemoryPropertyFlagBits requirements_mask, uint32_t *typeIndex) {
+VkBool32 VkBundle::AllocateMemoryTypeFromProperties(uint32_t typeBits, VkMemoryPropertyFlags requirements_mask, uint32_t *typeIndex) {
     // Search memtypes to find first index with those properties
     for (uint32_t i = 0; i < VK_MAX_MEMORY_TYPES; i++) {
         if ((typeBits & 1) == 1) {

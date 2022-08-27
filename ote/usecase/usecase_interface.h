@@ -12,8 +12,10 @@ struct distortion_data_render {
     render_mesh renderMesh;
 };
 
-void create_distortion_data_render(distortion_data_render *pDistortionDataRender, const uint32_t size_x, const uint32_t size_y);
+void create_distortion_data_render(VkBundle *vk, distortion_data_render *pDistortionDataRender, const uint32_t size_y,
+                                   const uint32_t size_x);
 
+void update_distortion_data_render(VkBundle *vk, ote_radial radial, distortion_data_render *pDistortionDataRender);
 #ifdef __cplusplus
 }
 #endif
