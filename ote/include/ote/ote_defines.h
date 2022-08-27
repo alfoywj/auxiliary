@@ -11,29 +11,43 @@
 extern "C" {
 #endif
 
-struct dbm_vec2 {
+struct ote_vec2 {
     float x;
     float y;
 };
 
-struct dbm_vec3 {
-    float x;
-    float y;
-    float z;
-};
-
-struct dbm_vec4 {
+struct ote_vec3 {
     float x;
     float y;
     float z;
-    float w;
 };
 
-struct dbm_radial {
+struct ote_vec4 {
+    union {
+        float x;
+        float r;
+    };
+    union {
+        float y;
+        float g;
+    };
+    union {
+        float z;
+        float b;
+        float u;
+    };
+    union {
+        float w;
+        float a;
+        float v;
+    };
+};
+
+struct ote_radial {
     float K[7];
 };
 
-struct {
+struct ote_data_mesh {
     //! Data.
     float *vertices;
     //! Number of vertices.
@@ -41,10 +55,16 @@ struct {
     //! Stride of vertices
     uint32_t stride;
     //! Indices, for triangle strip.
-    int *indices;
+    uint32_t *indices;
     //! Number of indices for the triangle strips (one per view).
     uint32_t index_count;
-} Mesh;
+};
+
+struct ote_grid_mesh {
+    uint32_t size_x;
+    uint32_t size_y;
+    ote_data_mesh dataMesh;
+};
 
 #ifdef __cplusplus
 }

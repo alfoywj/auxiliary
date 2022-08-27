@@ -1,8 +1,7 @@
 #pragma once
 
-#include "dbm/dbm_defines.h"
+#include "ote/ote_defines.h"
 #include <vulkan/vulkan_core.h>
-
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -26,6 +25,12 @@ struct render_buffer {
     void *mapped;
 };
 
+struct render_mesh {
+    render_buffer vertexBuffer;
+
+    render_buffer indexBuffer;
+};
+void create_render_mesh(VkDevice vkDevice, ote_data_mesh* pDataMesh, render_mesh* pRenderMesh);
 #ifdef __cplusplus
 }
 #endif
